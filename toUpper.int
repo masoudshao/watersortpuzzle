@@ -1,0 +1,7 @@
+interface
+type function to_upper(strIn)
+
+  character(len=*), intent(in) :: strIn
+!  character(len=len(strIn)) :: strOut
+
+end interface
