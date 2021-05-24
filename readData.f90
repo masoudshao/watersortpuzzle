@@ -12,11 +12,6 @@ subroutine readData(inputfile, NLINE, L, separator, ncolor, ntube, matrix, maps)
 
   integer :: i, j, k, kk, iunin
   
-!  kk = 0
-!  write(c1, *) "Empty"
-!  c2 = adjustl(to_upper(c1))
-!  maps(kk) = c2
-
   open(newUnit = iunin, file = trim(inputFile), status = 'old')
   matrix = 0
   kk = 0
@@ -31,6 +26,7 @@ subroutine readData(inputfile, NLINE, L, separator, ncolor, ntube, matrix, maps)
            k = kk
            if (k > nColor) then
               write(0,*) 'error'
+              write(0,*) "number of colors in input file are more than allowed"
               stop
            end if
         end if

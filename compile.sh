@@ -1,10 +1,8 @@
 #!/bin/bash
 set -e
+FC=gfortran
 
-rm -rf a.out*
-rm -f *o
-rm -f *mod
-rm -f *genmod*
+rm -rf a.out* *o *mod *genmod*
 
-ifort -static main.f90 readData.f90 check.f90 move.f90 toUpper.f90 lookFor.f90
+$FC main.f90 readData.f90 check.f90 move.f90 toUpper.f90 lookFor.f90
 
